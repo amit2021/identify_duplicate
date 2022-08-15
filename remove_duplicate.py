@@ -26,6 +26,8 @@ def find_duplicate(path: 'str') -> None:
         if var not in my_dict1 and i != '' and ('import ' in i):
             if ' as ' in i:
                 my_dict1[i[:i.index(' as')]] = []
+                #print('main   ',my_dict1[i[:i.index(' as')]])
+                #print('hello    ',my_dict1.keys())
                 unused[i[i.index(' ') + 1:i.index(' as')]] = i[i.index(' as') + 3:]
 
             else:
@@ -37,7 +39,9 @@ def find_duplicate(path: 'str') -> None:
         if i != '' and 'import ' in i:
             if ' as ' in i:
                 list1.append(var)
+                #print(list1)
                 my_dict1[var] += [j]
+                #print(my_dict1)
             else:
                 list1.append(i)
                 my_dict1[i] += [j]
@@ -47,10 +51,16 @@ def find_duplicate(path: 'str') -> None:
 
     # finding unused imports
     for i, j in unused.items():
+        print(i,'    ',j)
         k = str(j) + '.'
+        k=k.strip(' ')
+        #print('k is ',k)
         outfile1.seek(0)
         for l in outfile1:
-            if (k in l) and ('import' not in l):
+            print('l is -> ',l,'   k  ->',k)
+            print('ttt   ',k in l)
+            if (k in l): #and ('import' not in l):
+                print('npnpnp')
                 unused1[i] = 'Used'
                 break
             else:
