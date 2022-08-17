@@ -88,5 +88,4 @@ def find_duplicate(path: 'str') -> None:
     print('***********************************')
     print('         Unused Module')
     print('***********************************')
-    # print('\n')
     print(unused1)
