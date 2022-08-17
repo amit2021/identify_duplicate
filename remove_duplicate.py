@@ -79,13 +79,13 @@ def find_duplicate(path: 'str') -> None:
     for i in pop_list:
         my_dict1.pop(i)
 
-    print('***********************************')
+    print('************************************')
     print('     Duplicate  Import Module    ')
-    print('***********************************')
+    print('************************************')
     print(my_dict1)
     # print(json.dumps(my_dict1,indent=1))
     # print('\n')
-    print('***********************************')
+    print('************************************')
     print('         Unused Module')
-    print('***********************************')
+    print('***********************************'))
     print(unused1)
